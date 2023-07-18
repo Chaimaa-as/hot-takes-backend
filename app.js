@@ -1,8 +1,9 @@
 // Importer package mongoose
 const mongoose = require("mongoose");
-
+const connectDB = require("./config/db");
 // Importer package Express
 const express = require("express");
+connectDB();
 // Créer Express app
 const app = express();
 
@@ -10,7 +11,6 @@ const app = express();
 const userRoute = require("./router/userRoute");
 const sauceRoute = require("./router/sauceRoute");
 
-// dotenv pour cacher éléments sensibles
 const dotEnv = require("dotEnv").config("./env");
 
 // Importer package Body-parser
@@ -30,6 +30,9 @@ const limiter = rateLimit({
   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
+
+// dotenv pour cacher éléments sensibles
+require("dotenv").config("./env");
 
 // Se connecter à la base de données avec id User et mot de passe
 mongoose
