@@ -11,7 +11,7 @@ const app = express();
 const userRoute = require("./router/userRoute");
 const sauceRoute = require("./router/sauceRoute");
 
-const dotEnv = require("dotEnv").config("./env");
+// const dotEnv = require("dotEnv").config("./env");
 
 // Importer package Body-parser
 const bodyParser = require("body-parser");
