@@ -34,7 +34,7 @@ const limiter = rateLimit({
 // Se connecter à la base de données avec id User et mot de passe
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.73rmxkv.mongodb.net/piiquante?retryWrites=true&w=majority`,
+    `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.73rmxkv.mongodb.net/?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))
